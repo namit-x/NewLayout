@@ -71,7 +71,7 @@ const About = () => {
           <div className="relative animate-scale-in">
             <div className="relative overflow-hidden rounded-lg shadow-2xl">
               <img 
-                src={aboutImage} 
+                src='AboutPic.jpg' 
                 alt="Modern Interior Design" 
                 className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
               />
@@ -80,12 +80,12 @@ const About = () => {
             
             {/* Floating Statistics */}
             <div className="absolute -bottom-8 -left-8 bg-surface p-6 rounded-lg shadow-lg border border-border">
-              <div className="text-3xl font-playfair font-bold text-primary">20+</div>
+              <div className="text-3xl font-playfair font-bold text-primary">6+</div>
               <div className="text-text-secondary font-medium">Years Experience</div>
             </div>
             
             <div className="absolute -top-8 -right-8 bg-accent text-accent-foreground p-6 rounded-lg shadow-lg">
-              <div className="text-3xl font-playfair font-bold">150+</div>
+              <div className="text-3xl font-playfair font-bold">20+</div>
               <div className="font-medium">Projects Completed</div>
             </div>
           </div>

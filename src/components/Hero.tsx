@@ -12,7 +12,7 @@ const Hero = () => {
           alt="Modern Architecture" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-transparent opacity-80 z-50" />
       </div>
 
       {/* Content */}
@@ -41,7 +41,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-6 text-lg font-semibold backdrop-blur-sm"
+              className="border-2 border-primary-foreground/30 text-black hover:bg-primary-foreground hover:text-primary px-8 py-6 text-lg font-semibold backdrop-blur-sm"
             >
               Learn More
             </Button>

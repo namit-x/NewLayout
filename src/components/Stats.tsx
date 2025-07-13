@@ -4,10 +4,9 @@ const Stats = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const stats = [
-    { number: 150, suffix: '+', label: 'Projects Completed', description: 'Successful architectural ventures' },
-    { number: 20, suffix: '+', label: 'Years Experience', description: 'Decades of design excellence' },
-    { number: 95, suffix: '%', label: 'Client Satisfaction', description: 'Happy clients worldwide' },
-    { number: 25, suffix: '+', label: 'Awards Won', description: 'Industry recognition' }
+    { number: 10, suffix: '+', label: 'Projects Completed', description: 'Successful architectural ventures' },
+    { number: 6, suffix: '+', label: 'Years Experience', description: 'Decades of design excellence' },
+    { number: 100, suffix: '%', label: 'Client Satisfaction', description: 'Happy clients worldwide' },
   ];
 
   useEffect(() => {
@@ -72,7 +71,7 @@ const Stats = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
             <div 
               key={stat.label}

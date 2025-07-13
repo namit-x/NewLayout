@@ -3,17 +3,17 @@ import { Quote, Star } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Chen",
-      position: "CEO, Urban Development Corp",
+      name: "Rajesh Verma",
+      position: "MD, Gurugram Urban Development Authority",
       rating: 5,
-      content: "Working with this architectural firm has been transformative for our company. Their innovative approach to sustainable design and meticulous attention to detail resulted in a space that not only meets our functional needs but truly inspires our team every day."
+      content: "This Chandigarh-based firm transformed our Gurugram commercial complex with their innovative approach. Their fusion of modern architecture with Haryanvi cultural elements created a landmark that perfectly balances functionality with regional identity."
     },
     {
-      name: "Michael Rodriguez", 
-      position: "Director, Heritage Foundation",
+      name: "Priya Singh", 
+      position: "Director, Haryana Heritage Trust",
       rating: 5,
-      content: "The level of professionalism and creative vision demonstrated throughout our project was exceptional. They seamlessly blended modern functionality with historical preservation, creating a space that honors the past while embracing the future."
-    }
+      content: "Their restoration work on the Faridabad heritage site was exceptional. They preserved our traditional 'haveli' architecture while incorporating earthquake-resistant techniques - a perfect blend of heritage and modernity for Haryana."
+    },
   ];
 
   return (
