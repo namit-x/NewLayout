@@ -72,14 +72,7 @@ const Testimonials = () => {
 
         {/* Additional Trust Indicators */}
         <div className="mt-16 text-center">
-          <p className="text-text-muted mb-8">Trusted by leading organizations worldwide</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {['Fortune 500', 'Government', 'Non-Profit', 'Startups'].map((type) => (
-              <div key={type} className="text-text-muted font-medium px-4 py-2 border border-border rounded-full">
-                {type}
-              </div>
-            ))}
-          </div>
+          <p className="text-text-muted">Give us a chance to build your home and trust.</p>
         </div>
       </div>
     </section>

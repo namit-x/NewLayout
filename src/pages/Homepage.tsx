@@ -1,8 +1,8 @@
 import Header from '../components/Header';
-import Hero from '../components/Hero';
-import About from '../components/About';
-import Stats from '../components/Stats';
-import Testimonials from '../components/Testimonials';
+import Hero from '../components/homepage/Hero';
+import About from '../components/homepage/About';
+import Stats from '../components/homepage/Stats';
+import Testimonials from '../components/homepage/Testimonials';
 import Footer from '../components/Footer';
 
 const Homepage = () => {

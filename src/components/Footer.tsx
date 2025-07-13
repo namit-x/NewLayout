@@ -6,7 +6,7 @@ const Footer = () => {
       title: "Services",
       links: [
         "Architectural Design",
-        "Interior Design", 
+        "Interior Design",
         "Urban Planning",
         "3D Visualization",
         "Project Management",
@@ -17,7 +17,7 @@ const Footer = () => {
       title: "Projects",
       links: [
         "Residential",
-        "Commercial", 
+        "Commercial",
         "Institutional",
         "Mixed-Use",
         "Renovation",
@@ -51,9 +51,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2 space-y-6">
             <div>
-              <h3 className="text-3xl font-playfair font-bold mb-4">Artecture</h3>
+              <div className='flex items-end'>
+                <img src="/Logo2.png" width={60} alt="" />
+                <h3 className="text-3xl font-playfair font-bold mb-4">Advance Architect</h3>
+              </div>
               <p className="text-primary-foreground/80 leading-relaxed max-w-md">
-                Creating extraordinary architectural experiences through innovative design, 
+                Creating extraordinary architectural experiences through innovative design,
                 sustainable practices, and unwavering commitment to excellence.
               </p>
             </div>
@@ -68,11 +71,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-accent" />
-                <span className="text-primary-foreground/80">+1 (555) 123-4567</span>
+                <span className="text-primary-foreground/80">+91 89973 20043</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-accent" />
-                <span className="text-primary-foreground/80">hello@artecture.com</span>
+                <span className="text-primary-foreground/80">hello@advancearchitect.com</span>
               </div>
             </div>
 
@@ -121,7 +124,7 @@ const Footer = () => {
         <div className="container mx-auto container-padding py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-primary-foreground/60 text-sm">
-              © 2024 Artecture. All rights reserved.
+              © 2022 Advance Architect. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors">
