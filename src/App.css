@@ -9,6 +9,11 @@
   text-align: center;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

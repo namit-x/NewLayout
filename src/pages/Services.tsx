@@ -1,9 +1,11 @@
+import React, { useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { Button } from '../components/ui/button';
 import { ArrowRight, Building, Hammer, Cog } from 'lucide-react';
 import { motion } from 'framer-motion';
+import bgImage from '/SHero.png'
 
 const servicesData = {
   "services": [
@@ -76,6 +78,24 @@ const servicesData = {
 
 const Services = () => {
 
+  const architectureRef = useRef<HTMLDivElement>(null);
+  const engineeringRef = useRef<HTMLDivElement>(null);
+  const constructionRef = useRef<HTMLDivElement>(null);
+  const navigationBoxRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current && navigationBoxRef.current) {
+      const boxHeight = navigationBoxRef.current.offsetHeight;
+      const sectionPosition = ref.current.offsetTop;
+      const offsetPosition = sectionPosition - boxHeight - 40; // 40px extra spacing
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -98,11 +118,11 @@ const Services = () => {
       <Header />
 
       {/* Hero Section */}
-      <div className="relative h-[60vh] bg-gray-900">
+      <div className="snap-y snap-mandatory overflow-y-scroll h-screen">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80)'
+            backgroundImage: `url(${bgImage})`
           }}
         />
         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
@@ -129,134 +149,138 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Services Categories */}
-      {servicesData.services.map((category, categoryIndex) => (
-        <section
-          key={category.category}
-          className={`section-padding ${categoryIndex % 2 === 0 ? 'bg-surface' : 'bg-primary text-primary-foreground'
-            }`}
+      {/* Floating Navigation Box */}
+      <div ref={navigationBoxRef} className="container mx-auto px-4 -mt-12 sticky top-0 left-0 z-50 mb-12">
+        <motion.div
+          className="bg-background border-2 border-accent rounded-2xl shadow-xl p-4 flex flex-col md:flex-row justify-center gap-2 md:gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          style={{
+            boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04)"
+          }}
         >
-          <div className="container mx-auto container-padding">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              {/* Content */}
-              <div className={`space-y-8 ${categoryIndex % 2 === 1 ? 'lg:order-2' : ''}`}>
-                {/* Icon & Title */}
-                <div className="space-y-6">
-                  <div className={`${categoryIndex % 2 === 0 ? 'text-accent' : 'text-accent'}`}>
-                    {category.icon}
-                  </div>
-
-                  <div>
-                    <h2 className={`text-4xl md:text-5xl font-playfair font-bold mb-4 animate-fade-in ${categoryIndex % 2 === 0 ? 'text-primary' : 'text-primary-foreground'
-                      }`}>
-                      {category.category}
-                    </h2>
-                    <p className={`text-xl md:text-2xl font-medium animate-slide-up ${categoryIndex % 2 === 0 ? 'text-accent' : 'text-accent'
-                      }`}>
-                      {category.tagline}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Services Accordion */}
-                <div className="space-y-4">
-                  <Accordion type="multiple" className="space-y-4">
-                    {category.services_offered.map((service, serviceIndex) => (
-                      <AccordionItem
-                        key={service.title}
-                        value={`${category.category}-${serviceIndex}`}
-                        className={`border rounded-lg transition-all duration-500 ${categoryIndex % 2 === 0
-                          ? 'border-border bg-surface-elevated hover:bg-muted/30'
-                          : 'border-primary-foreground/20 bg-primary-foreground/10 hover:bg-primary-foreground/20'
-                          }`}
-                      >
-                        <AccordionTrigger className="px-6 py-4 text-left hover:no-underline group">
-                          <div className="flex items-center gap-4 w-full">
-                            <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
-                              <img
-                                src={service.image}
-                                alt={service.title}
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                              />
-                            </div>
-                            <span className={`text-lg md:text-xl font-playfair font-semibold ${categoryIndex % 2 === 0 ? 'text-primary' : 'text-primary-foreground'
-                              }`}>
-                              {service.title}
-                            </span>
-                          </div>
-                        </AccordionTrigger>
-                        <AccordionContent className="px-6 pb-6 pt-0">
-                          <div className="ml-20">
-                            <p className={`leading-relaxed text-base md:text-lg ${categoryIndex % 2 === 0 ? 'text-text-secondary' : 'text-primary-foreground/80'
-                              }`}>
-                              {service.description}
-                            </p>
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </div>
+          {servicesData.services.map((category) => (
+            <button
+              key={category.category}
+              onClick={() => {
+                if (category.category === "Architecture") scrollToSection(architectureRef);
+                if (category.category === "Engineering") scrollToSection(engineeringRef);
+                if (category.category === "Construction") scrollToSection(constructionRef);
+              }}
+              className="flex-1 flex items-center gap-4 p-4 md:p-5 rounded-xl transition-all duration-300 hover:bg-accent/10 hover:shadow-sm group"
+            >
+              <div className="p-3 rounded-lg bg-accent/10 text-accent group-hover:bg-accent/20 transition-colors">
+                {React.cloneElement(category.icon, { className: "w-6 h-6" })}
               </div>
-
-              {/* Image */}
-              <div className={`relative animate-scale-in ${categoryIndex % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <div className="relative overflow-hidden rounded-lg shadow-2xl">
-                  <img
-                    src={category.image}
-                    alt={category.category}
-                    className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-                </div>
-
-                {/* Floating Stat */}
-                <div className={`absolute -bottom-6 -right-6 p-6 rounded-lg shadow-lg ${categoryIndex % 2 === 0
-                  ? 'bg-accent text-accent-foreground'
-                  : 'bg-surface text-primary border border-border'
-                  }`}>
-                  <div className="text-2xl font-playfair font-bold">
-                    {categoryIndex === 0 ? '100+' : categoryIndex === 1 ? '20+' : '150+'}
-                  </div>
-                  <div className="text-sm font-medium">
-                    {categoryIndex === 0 ? 'Designs Created' : categoryIndex === 1 ? 'Years Experience' : 'Projects Built'}
-                  </div>
-                </div>
+              <div className="text-left">
+                <h3 className="text-lg font-semibold text-primary">{category.category}</h3>
+                <p className="text-sm text-muted-foreground">{category.tagline}</p>
               </div>
+            </button>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Architecture Section - 4 Box Grid */}
+      <section ref={architectureRef} className="snap-start h-screen flex items-center justify-center bg-surface py-4">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <div className="inline-block p-4 rounded-full mb-2 bg-accent/10 text-accent">
+              <Building className="w-8 h-8" />
             </div>
+            <h2 className="text-4xl font-bold mb-3">Architecture</h2>
+            <p className="text-xl text-primary">Your Vision, Our Expertise</p>
           </div>
-        </section>
-      ))}
 
-      {/* Call to Action */}
-      <section className="section-padding bg-muted">
-        <div className="container mx-auto container-padding text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6 animate-fade-in">
-              Ready to Start Your
-              <span className="block text-accent">Dream Project?</span>
-            </h2>
-            <p className="text-xl text-text-secondary mb-12 leading-relaxed animate-slide-up">
-              Let's discuss how we can bring your architectural vision to life with our comprehensive services and decades of expertise.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-scale-in">
-              <Button
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg font-semibold group"
+          <div className="grid grid-cols-2 gap-6 max-h-[70vh] overflow-y-auto px-2"> {/* Fixed height container */}
+            {servicesData.services[0].services_offered.map((service) => (
+              <motion.div
+                key={service.title}
+                className="relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all"
+                whileHover={{ y: -5 }}
               >
-                Get Started Today
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                <div className="relative h-full flex flex-col justify-end p-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
+                  <p className="text-white/90">{service.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-semibold"
-              >
-                View Portfolio
-              </Button>
+      {/* Engineering Section - 2 Box Grid */}
+      <section ref={engineeringRef} className="min-h-screen flex items-center bg-primary text-white py-20 border-2 border-red-500">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="inline-block p-4 rounded-full mb-6 bg-white/10">
+              <Cog className="w-10 h-10" />
             </div>
+            <h2 className="text-4xl font-bold mb-3">Engineering</h2>
+            <p className="text-xl text-white">Structural Strength meets Thoughtful Design</p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 h-[450px]"> {/* Taller boxes */}
+            {servicesData.services[1].services_offered.map((service) => (
+              <motion.div
+                key={service.title}
+                className="relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all"
+                whileHover={{ scale: 1.02 }}
+              >
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/70" />
+                <div className="relative h-full flex flex-col justify-end p-8">
+                  <h3 className="text-3xl font-bold text-white mb-3">{service.title}</h3>
+                  <p className="text-white/80 text-lg">{service.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Construction Section - 2 Box Grid */}
+      <section ref={constructionRef} className="min-h-screen flex items-center bg-surface py-20">
+        <div className="container mx-auto px-4">
+
+          <div className="text-center mb-16">
+            <div className="inline-block p-4 rounded-full mb-6 bg-white/10">
+              <Cog className="w-10 h-10" />
+            </div>
+            <h2 className="text-4xl font-bold mb-3">Construction</h2>
+            <p className="text-xl text-primary">Building Your Dream, Brick by Brick</p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 h-[450px]">
+            {servicesData.services[2].services_offered.map((service) => (
+              <motion.div
+                key={service.title}
+                className="relative rounded-2xl overflow-hidden shadow-xl border border-border hover:shadow-2xl transition-all"
+                whileHover={{ y: -5 }}
+              >
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/70" />
+                <div className="relative h-full flex flex-col justify-end p-8">
+                  <h3 className="text-3xl font-bold text-white mb-3">{service.title}</h3>
+                  <p className="text-white/80 text-lg">{service.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

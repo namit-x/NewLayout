@@ -52,7 +52,7 @@ const Footer = () => {
           <div className="lg:col-span-2 space-y-6">
             <div>
               <div className='flex items-end'>
-                <img src="/Logo2.png" width={60} alt="" />
+                <img src="/Logo2.png" width={70} alt="" />
                 <h3 className="text-3xl font-playfair font-bold mb-4">Advance Architect</h3>
               </div>
               <p className="text-primary-foreground/80 leading-relaxed max-w-md">

@@ -21,7 +21,7 @@ const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'Projects', href: '/projects' },
     { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '#' },
+    { name: 'Contact', href: '/contacts' },
   ];
 
   return (
@@ -37,7 +37,7 @@ const Header = () => {
               <img className='w-10' src={logoUrl} alt="Logo" />
             </div>
             <div className={`text-2xl font-playfair font-semibold ${isScrolled ? "text-black" : "text-white"}`}>
-              Advance Architect
+              ADVANCE ARCHITECT
             </div>
           </div>
 

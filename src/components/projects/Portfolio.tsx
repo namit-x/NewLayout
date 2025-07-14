@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { AspectRatio } from '../../components/ui/aspect-ratio';
+import portfolioHeroBg from '/PHero.png'
 
 const projects = [
   {
@@ -81,21 +82,9 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <section className="pt-24 pb-16">
-      Hero Section
-      <div className="container mx-auto container-padding mb-20">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-playfair font-bold text-primary mb-6 animate-fade-in">
-            Our Portfolio
-          </h1>
-          <p className="text-xl text-text-secondary leading-relaxed animate-fade-in" style={{animationDelay: '0.2s'}}>
-            Discover our collection of architectural masterpieces that redefine spaces and inspire communities. 
-            Each project tells a unique story of innovation, sustainability, and timeless design.
-          </p>
-        </div>
-      </div>
-
-      <section 
+    <section className="pb-16">
+      {/* Hero Section */}
+      <section
         className="py-20 relative"
         style={{
           backgroundImage: `url(${portfolioHeroBg})`,
@@ -104,14 +93,14 @@ const Portfolio = () => {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/80"></div>
-        <div className="container mx-auto container-padding mb-20 relative z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/40"></div>
+        <div className="container pt-20 mx-auto container-padding mb-20 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-playfair font-bold text-primary mb-6 animate-fade-in">
-              Our Portfolio
+            <h1 className="font-playfair text-5xl lg:text-6xl font-bold text-white mb-6">
+              Our <span className='text-gradient'>Portfolio</span>
             </h1>
-            <p className="text-xl text-text-secondary leading-relaxed animate-fade-in" style={{animationDelay: '0.2s'}}>
-              Discover our collection of architectural masterpieces that redefine spaces and inspire communities. 
+            <p className="text-lg lg:text-xl text-gray-200 max-w-2xl mx-auto" style={{ animationDelay: '0.2s' }}>
+              Discover our collection of architectural masterpieces that redefine spaces and inspire communities.
               Each project tells a unique story of innovation, sustainability, and timeless design.
             </p>
           </div>
@@ -122,46 +111,50 @@ const Portfolio = () => {
       <div className="space-y-32">
         {projects.map((project, index) => {
           const isOdd = index % 2 === 0;
-          
+
           return (
             <div
               key={project.id}
               ref={(el) => (projectRefs.current[index] = el)}
               className="opacity-0 translate-y-8 transition-all duration-700 ease-out"
             >
-              <div className={`container mx-auto container-padding ${
-                index % 2 === 0 ? 'bg-background' : 'bg-surface'
-              } py-16 -mx-4`}>
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
-                  isOdd ? '' : 'lg:grid-flow-col-dense'
-                }`}>
-                  
+              <div className={`container mx-auto container-padding ${index % 2 === 0 ? 'bg-background' : 'bg-primary text-white rounded-2xl'
+                } py-16 -mx-4`}>
+                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${isOdd ? '' : 'lg:grid-flow-col-dense'
+                  }`}>
+
                   {/* Project Description */}
                   <div className={`space-y-6 ${isOdd ? 'lg:order-1' : 'lg:order-2'}`}>
                     <div className="space-y-2">
-                      <div className="flex items-center gap-3 text-sm font-medium text-primary">
+                      <div className={`flex items-center gap-3 text-sm font-medium ${index % 2 === 0 ? 'text-primary' : 'text-primary-foreground/80'
+                        }`}>
                         <span>{project.category}</span>
-                        <span className="w-1 h-1 bg-primary rounded-full"></span>
+                        <span className={`w-1 h-1 rounded-full ${index % 2 === 0 ? 'bg-primary' : 'bg-primary-foreground/80'
+                          }`}></span>
                         <span>{project.year}</span>
-                        <span className="w-1 h-1 bg-primary rounded-full"></span>
+                        <span className={`w-1 h-1 rounded-full ${index % 2 === 0 ? 'bg-primary' : 'bg-primary-foreground/80'
+                          }`}></span>
                         <span>{project.location}</span>
                       </div>
-                      <h2 className="text-4xl lg:text-5xl font-playfair font-bold text-primary leading-tight">
+                      <h2 className={`text-4xl lg:text-5xl font-playfair font-bold leading-tight ${index % 2 === 0 ? 'text-primary' : 'text-white'
+                        }`}>
                         {project.title}
                       </h2>
                     </div>
-                    
-                    <p className="text-lg text-text-secondary leading-relaxed">
+
+                    <p className={`text-lg leading-relaxed ${index % 2 === 0 ? 'text-text-secondary' : 'text-primary-foreground/90'
+                      }`}>
                       {project.description}
                     </p>
-                    
+
                     <div className="pt-4">
-                      <button className="group inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all duration-300">
+                      <button className={`group inline-flex items-center gap-2 font-medium hover:gap-3 transition-all duration-300 ${index % 2 === 0 ? 'text-primary' : 'text-primary-foreground'
+                        }`}>
                         View Project Details
-                        <svg 
-                          className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 
-                          fill="none" 
-                          stroke="currentColor" 
+                        <svg
+                          className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+                          fill="none"
+                          stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -170,10 +163,10 @@ const Portfolio = () => {
                     </div>
                   </div>
 
-                  {/* Project Image */}
+                  {/* Project Image - Remains unchanged */}
                   <div className={`${isOdd ? 'lg:order-2' : 'lg:order-1'}`}>
                     <div className="group relative overflow-hidden rounded-2xl bg-surface-elevated shadow-lg">
-                      <AspectRatio ratio={3/2} className="bg-muted">
+                      <AspectRatio ratio={3 / 2} className="bg-muted">
                         <img
                           src={project.image}
                           alt={project.title}
@@ -182,14 +175,16 @@ const Portfolio = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </AspectRatio>
-                      
+
                       {/* Project number overlay */}
-                      <div className="absolute top-6 left-6 w-12 h-12 bg-primary/90 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">
+                      <div className={`absolute top-6 left-6 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg ${index % 2 === 0 ? 'bg-primary/90 text-white' : 'bg-white/90 text-primary'
+                        } backdrop-blur-sm`}>
                         {String(project.id).padStart(2, '0')}
                       </div>
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
           );
