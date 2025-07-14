@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { Button } from '../components/ui/button';
 import { ArrowRight, Building, Hammer, Cog } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -13,27 +12,26 @@ const servicesData = {
       "category": "Architecture",
       "tagline": "Your Vision, Our Expertise",
       "icon": <Building className="w-16 h-16" />,
-      "image": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
       "services_offered": [
         {
           "title": "Master Planning & Consultancy",
           "description": "In-depth site analysis and feasibility advice tailored to your lifestyle needs.",
-          "image": "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=400&h=300&fit=crop"
+          "image": "Planning&Consultancy.jpg"
         },
         {
           "title": "Designing",
           "description": "From concept to construction drawings—balancing aesthetics, Vastu, and functionality.",
-          "image": "https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=400&h=300&fit=crop"
+          "image": "Design.jpg"
         },
         {
           "title": "Interior",
           "description": "Interiors shaped by your life—refined, functional, and deeply personal.",
-          "image": "https://images.unsplash.com/photo-1524230572899-a752b3835840?w=400&h=300&fit=crop"
+          "image": "interior.jpg"
         },
         {
           "title": "Exterior",
           "description": "Timeless facades and expressive forms—where architecture becomes identity.",
-          "image": "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=400&h=300&fit=crop"
+          "image": "Extrior.jpg"
         }
       ]
     },
@@ -41,17 +39,16 @@ const servicesData = {
       "category": "Engineering",
       "tagline": "Structural Strength meets Thoughtful Design",
       "icon": <Cog className="w-16 h-16" />,
-      "image": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&h=600&fit=crop",
       "services_offered": [
         {
           "title": "Structural Designing",
           "description": "Safe, compliant calculations and material specs with clear, client-friendly explanations.",
-          "image": "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=400&h=300&fit=crop"
+          "image": "StructureDesigning.jpg"
         },
         {
           "title": "Site Visit & Supervision",
           "description": "Regular on-site checks, progress updates, and seamless coordination with contractors.",
-          "image": "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?w=400&h=300&fit=crop"
+          "image": "SiteVisit.jpg"
         }
       ]
     },
@@ -59,17 +56,16 @@ const servicesData = {
       "category": "Construction",
       "tagline": "Building Your Dream, Brick by Brick",
       "icon": <Hammer className="w-16 h-16" />,
-      "image": "https://images.unsplash.com/photo-1439337153520-7082a56a81f4?w=800&h=600&fit=crop",
       "services_offered": [
         {
           "title": "Turnkey Projects",
           "description": "End-to-end execution—design, build, and handover, so you can move in worry-free.",
-          "image": "https://images.unsplash.com/photo-1497604401993-f2e922e5cb0a?w=400&h=300&fit=crop"
+          "image": "TurnKey.jpg"
         },
         {
           "title": "Percentage Fee Contracts",
           "description": "A transparent fee structure linked to project milestones, ensuring your budget stays on track.",
-          "image": "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=400&h=300&fit=crop"
+          "image": "PercentageFee.jpg"
         }
       ]
     }
@@ -77,7 +73,6 @@ const servicesData = {
 };
 
 const Services = () => {
-
   const architectureRef = useRef<HTMLDivElement>(null);
   const engineeringRef = useRef<HTMLDivElement>(null);
   const constructionRef = useRef<HTMLDivElement>(null);
@@ -87,7 +82,7 @@ const Services = () => {
     if (ref.current && navigationBoxRef.current) {
       const boxHeight = navigationBoxRef.current.offsetHeight;
       const sectionPosition = ref.current.offsetTop;
-      const offsetPosition = sectionPosition - boxHeight - 40; // 40px extra spacing
+      const offsetPosition = sectionPosition - boxHeight - 20; // Reduced extra spacing
 
       window.scrollTo({
         top: offsetPosition,
@@ -118,7 +113,7 @@ const Services = () => {
       <Header />
 
       {/* Hero Section */}
-      <div className="snap-y snap-mandatory overflow-y-scroll h-screen">
+      <div className="h-screen w-full relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -174,7 +169,7 @@ const Services = () => {
                 {React.cloneElement(category.icon, { className: "w-6 h-6" })}
               </div>
               <div className="text-left">
-                <h3 className="text-lg font-semibold text-primary">{category.category}</h3>
+                <h3 className="text-2xl font-bold text-primary">{category.category}</h3>
                 <p className="text-sm text-muted-foreground">{category.tagline}</p>
               </div>
             </button>
@@ -182,33 +177,42 @@ const Services = () => {
         </motion.div>
       </div>
 
-      {/* Architecture Section - 4 Box Grid */}
-      <section ref={architectureRef} className="snap-start h-screen flex items-center justify-center bg-surface py-4">
+      {/* Architecture Section */}
+      <section
+        ref={architectureRef}
+        className="min-h-screen flex items-center justify-center pt-10 pb-4 bg-surface"
+      >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <div className="inline-block p-4 rounded-full mb-2 bg-accent/10 text-accent">
+          <div className="text-center mb-12">
+            <div className="inline-block p-4 rounded-full mb-4 bg-accent/10 text-accent">
               <Building className="w-8 h-8" />
             </div>
             <h2 className="text-4xl font-bold mb-3">Architecture</h2>
             <p className="text-xl text-primary">Your Vision, Our Expertise</p>
           </div>
 
-          <div className="grid grid-cols-2 gap-6 max-h-[70vh] overflow-y-auto px-2"> {/* Fixed height container */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {servicesData.services[0].services_offered.map((service) => (
               <motion.div
                 key={service.title}
-                className="relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all"
+                className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all flex flex-col h-[100%]"
                 whileHover={{ y: -5 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+                transition={{ duration: 0.4 }}
               >
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-                <div className="relative h-full flex flex-col justify-end p-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
-                  <p className="text-white/90">{service.description}</p>
+                <div className="aspect-[9/8] relative">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold text-primary mb-2">{service.title}</h3>
+                  <p className="text-muted-foreground flex-1">{service.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -216,33 +220,42 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Engineering Section - 2 Box Grid */}
-      <section ref={engineeringRef} className="min-h-screen flex items-center bg-primary text-white py-20 border-2 border-red-500">
+      {/* Engineering Section */}
+      <section
+        ref={engineeringRef}
+        className="min-h-screen flex items-center justify-center pt-10 bg-primary text-white"
+      >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-block p-4 rounded-full mb-6 bg-white/10">
-              <Cog className="w-10 h-10" />
+          <div className="text-center mb-12">
+            <div className="inline-block p-4 rounded-full mb-4 bg-white/10">
+              <Cog className="w-8 h-8" />
             </div>
             <h2 className="text-4xl font-bold mb-3">Engineering</h2>
-            <p className="text-xl text-white">Structural Strength meets Thoughtful Design</p>
+            <p className="text-xl">Structural Strength meets Thoughtful Design</p>
           </div>
 
-          <div className="grid grid-cols-2 gap-6 h-[450px]"> {/* Taller boxes */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {servicesData.services[1].services_offered.map((service) => (
               <motion.div
                 key={service.title}
-                className="relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all"
+                className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all flex flex-col bg-white/5 backdrop-blur-sm h-full"
                 whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+                transition={{ duration: 0.4 }}
               >
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/70" />
-                <div className="relative h-full flex flex-col justify-end p-8">
-                  <h3 className="text-3xl font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-white/80 text-lg">{service.description}</p>
+                <div className="aspect-[12/7] relative">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+                  <p className="text-white/80 flex-1">{service.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -250,34 +263,42 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Construction Section - 2 Box Grid */}
-      <section ref={constructionRef} className="min-h-screen flex items-center bg-surface py-20">
+      {/* Construction Section */}
+      <section
+        ref={constructionRef}
+        className="min-h-screen flex items-center justify-center pt-10 pb-20 bg-surface"
+      >
         <div className="container mx-auto px-4">
-
-          <div className="text-center mb-16">
-            <div className="inline-block p-4 rounded-full mb-6 bg-white/10">
-              <Cog className="w-10 h-10" />
+          <div className="text-center mb-12">
+            <div className="inline-block p-4 rounded-full mb-4 bg-accent/10 text-accent">
+              <Hammer className="w-8 h-8" />
             </div>
             <h2 className="text-4xl font-bold mb-3">Construction</h2>
             <p className="text-xl text-primary">Building Your Dream, Brick by Brick</p>
           </div>
 
-          <div className="grid grid-cols-2 gap-6 h-[450px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {servicesData.services[2].services_offered.map((service) => (
               <motion.div
                 key={service.title}
-                className="relative rounded-2xl overflow-hidden shadow-xl border border-border hover:shadow-2xl transition-all"
+                className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all flex flex-col border border-border h-full"
                 whileHover={{ y: -5 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+                transition={{ duration: 0.4 }}
               >
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/70" />
-                <div className="relative h-full flex flex-col justify-end p-8">
-                  <h3 className="text-3xl font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-white/80 text-lg">{service.description}</p>
+                <div className="aspect-[12/7] relative">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold text-primary mb-2">{service.title}</h3>
+                  <p className="text-muted-foreground flex-1">{service.description}</p>
                 </div>
               </motion.div>
             ))}
