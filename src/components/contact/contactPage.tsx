@@ -22,21 +22,6 @@ const ContactInfo = () => {
             <p className="text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto mb-10">
               Let's collaborate to transform your architectural vision into reality
             </p>
-            <div className="flex gap-4 justify-center">
-              <a 
-                href="#contact-content" 
-                className="px-8 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-accent transition-all hover:translate-y-[-2px] shadow-lg"
-              >
-                Contact Us
-              </a>
-              <a 
-                href="tel:+918529990100" 
-                className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white rounded-lg font-medium hover:bg-white/20 transition-all hover:translate-y-[-2px] border border-white/20 shadow-lg flex items-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                Call Now
-              </a>
-            </div>
           </div>
         </div>
         
@@ -65,7 +50,7 @@ const ContactInfo = () => {
                   let's craft something extraordinary.
                 </p>
                 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-1 gap-6">
                   {/* Architect Card */}
                   <div className="bg-card p-6 rounded-xl border border-border/20 hover:border-primary/30 transition-all hover:shadow-lg hover:translate-y-[-4px]">
                     <div className="flex items-start gap-4">
@@ -73,7 +58,7 @@ const ContactInfo = () => {
                         <Building2 className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-medium text-muted-foreground mb-1">Principal Architect</h3>
+                        <h3 className="font-medium text-muted-foreground mb-1">Designer</h3>
                         <p className="text-xl font-semibold text-foreground">Yogesh</p>
                         <p className="text-sm text-muted-foreground mt-1">Advance Architect</p>
                       </div>
@@ -89,7 +74,7 @@ const ContactInfo = () => {
                       <div>
                         <h3 className="font-medium text-muted-foreground mb-1">Email Us</h3>
                         <a href="mailto:contact@advancearchitect.com" className="text-xl font-semibold text-primary hover:text-primary-accent transition-colors">
-                          advance.com
+                        architectadvance@gmail.com
                         </a>
                       </div>
                     </div>
@@ -138,8 +123,7 @@ const ContactInfo = () => {
                     <div>
                       <h3 className="font-playfair text-xl font-semibold text-foreground mb-2">Visit Our Studio</h3>
                       <p className="text-lg font-medium text-foreground">
-                        Advance Architect Working Group<br />
-                        Haryana, India
+                      14,First Floor, Saini Complex, Near civil hospital, Rohtak
                       </p>
                       <p className="text-muted-foreground mt-2 flex items-center gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clock">

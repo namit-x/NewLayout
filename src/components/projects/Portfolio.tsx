@@ -192,21 +192,6 @@ const Portfolio = () => {
           );
         })}
       </div>
-
-      {/* Call to Action */}
-      <div className="container mx-auto container-padding mt-32">
-        <div className="text-center bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-16">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
-            Ready to Create Your Vision?
-          </h2>
-          <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
-            Let's collaborate to bring your architectural dreams to life with innovative design and exceptional craftsmanship.
-          </p>
-          <button className="bg-primary hover:bg-primary-hover text-primary-foreground px-8 py-4 rounded-lg font-medium transition-colors duration-300 hover:shadow-lg transform hover:-translate-y-1 transition-transform">
-            Start Your Project
-          </button>
-        </div>
-      </div>
     </section>
   );
 };

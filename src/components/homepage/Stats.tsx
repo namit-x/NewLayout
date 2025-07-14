@@ -4,8 +4,8 @@ const Stats = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const stats = [
-    { number: 10, suffix: '+', label: 'Projects Completed', description: 'Successful architectural ventures' },
-    { number: 6, suffix: '+', label: 'Years Experience', description: 'Years of design excellence' },
+    { number: 50, suffix: '+', label: 'Projects Completed', description: 'Successful architectural ventures' },
+    { number: 20, suffix: '+', label: 'Years Experience', description: 'Years of design excellence' },
     { number: 100, suffix: '%', label: 'Client Satisfaction', description: 'Happy clients worldwide' },
   ];
 
