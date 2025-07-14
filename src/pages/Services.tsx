@@ -78,12 +78,12 @@ const Services = () => {
   const constructionRef = useRef<HTMLDivElement>(null);
   const navigationBoxRef = useRef<HTMLDivElement>(null);
 
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (ref.current && navigationBoxRef.current) {
       const boxHeight = navigationBoxRef.current.offsetHeight;
       const sectionPosition = ref.current.offsetTop;
       const offsetPosition = sectionPosition - boxHeight - 20; // Reduced extra spacing
-
+  
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'

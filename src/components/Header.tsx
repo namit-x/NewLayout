@@ -48,7 +48,12 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`${isScrolled ? "text-black" : "text-white"} hover:text-primary transition-colors duration-200 font-medium`}
+                  className={`
+                    ${isScrolled ? "text-black" : "text-white"} 
+                    hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-yellow-100 hover:to-yellow-600
+                    transition-all duration-200 ease-in-out 
+                    font-medium
+                  `}
                 >
                   {item.name}
                 </a>

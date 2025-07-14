@@ -85,7 +85,7 @@ const Portfolio = () => {
     <section className="pb-16">
       {/* Hero Section */}
       <section
-        className="py-20 relative"
+        className="py-[75px] relative"
         style={{
           backgroundImage: `url(${portfolioHeroBg})`,
           backgroundSize: 'cover',
@@ -115,7 +115,9 @@ const Portfolio = () => {
           return (
             <div
               key={project.id}
-              ref={(el) => (projectRefs.current[index] = el)}
+              ref={(el) => {
+                projectRefs.current[index] = el;
+              }}
               className="opacity-0 translate-y-8 transition-all duration-700 ease-out"
             >
               <div className={`container mx-auto container-padding ${index % 2 === 0 ? 'bg-background' : 'bg-primary text-white rounded-2xl'
