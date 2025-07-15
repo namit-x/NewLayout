@@ -1,8 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Button } from '../components/ui/button';
-import { ArrowRight, Building, Hammer, Cog } from 'lucide-react';
+import { Building, Hammer, Cog } from 'lucide-react';
 import { motion } from 'framer-motion';
 import bgImage from '/SHero.png'
 
@@ -206,7 +205,7 @@ const Services = () => {
         <div className="container mx-auto px-4 w-full">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <div className="inline-block p-3 sm:p-4 rounded-full mb-4 bg-accent/10 text-accent">
-              <Building className="w-6 h-6 sm:w-8 h-8" />
+              <Building className="w-6 sm:w-8 h-8" />
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">Architecture</h2>
             <p className="text-lg sm:text-xl text-primary">Your Vision, Our Expertise</p>
@@ -250,7 +249,7 @@ const Services = () => {
         <div className="container mx-auto px-4 w-full">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <div className="inline-block p-3 sm:p-4 rounded-full mb-4 bg-white/10">
-              <Cog className="w-6 h-6 sm:w-8 h-8" />
+              <Cog className="w-6 sm:w-8 h-8" />
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">Engineering</h2>
             <p className="text-lg sm:text-xl">Structural Strength meets Thoughtful Design</p>
@@ -294,7 +293,7 @@ const Services = () => {
         <div className="container mx-auto px-4 w-full">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <div className="inline-block p-3 sm:p-4 rounded-full mb-4 bg-accent/10 text-accent">
-              <Hammer className="w-6 h-6 sm:w-8 h-8" />
+              <Hammer className="w-6 sm:w-8 h-8" />
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">Construction</h2>
             <p className="text-lg sm:text-xl text-primary">Building Your Dream, Brick by Brick</p>

@@ -1,4 +1,4 @@
-import { Phone, MapPin, Building2, Calendar, Mail } from "lucide-react";
+import { Phone, MapPin, Building2, Mail } from "lucide-react";
 import contactHeroBg from "/CHero.png";
 
 const ContactInfo = () => {
