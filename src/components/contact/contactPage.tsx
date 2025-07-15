@@ -221,7 +221,8 @@ const ContactInfo = () => {
                       </div>
                     </div>
                     <a 
-                      href="#" 
+                      href="https://www.google.com/maps/place/ADVANCE+ARCHITECT+WORKING+GROUP/@28.899829,76.583346,14z/data=!4m6!3m5!1s0x390d853c329938dd:0x798a4b369b4112d2!8m2!3d28.8998292!4d76.5833463!16s%2Fg%2F11h5vlfs0d?hl=en&entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" 
+                      target="_blank"
                       className="text-primary font-medium hover:text-primary-accent transition-colors flex items-center gap-1"
                     >
                       Get Directions
