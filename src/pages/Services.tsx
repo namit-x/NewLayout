@@ -8,6 +8,7 @@ const servicesData = {
     {
       "category": "ARCHITECTURE",
       "tagline": "Your Vision, Our Expertise",
+      "src": 'Arch.jpg',
       "icon": <Building className="w-16 h-16" />,
       "services_offered": [
         {
@@ -33,8 +34,9 @@ const servicesData = {
       ]
     },
     {
-      "category": "Engineering",
+      "category": "ENGINEERING",
       "tagline": "Structural Strength meets Thoughtful Design",
+      "src": 'Cons.jpg',
       "icon": <Cog className="w-16 h-16" />,
       "services_offered": [
         {
@@ -50,8 +52,9 @@ const servicesData = {
       ]
     },
     {
-      "category": "Construction",
+      "category": "CONSTRUCTION",
       "tagline": "Building Your Dream, Brick by Brick",
+      "src":'Engin.jpg',
       "icon": <Hammer className="w-16 h-16" />,
       "services_offered": [
         {
@@ -180,8 +183,8 @@ const Services = () => {
               }}
               className="flex-1 flex items-center gap-2 sm:gap-4 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl transition-all duration-300 hover:bg-accent/10 hover:shadow-sm group"
             >
-              <div className="p-2 sm:p-3 rounded-lg bg-accent/10 text-accent group-hover:bg-accent/20 transition-colors flex-shrink-0">
-                {React.cloneElement(category.icon, { className: "w-4 h-4 sm:w-5 h-5 md:w-6 h-6" })}
+              <div className="rounded-lg text-accent transition-colors">
+                <img src={`${category.src}`} alt="image" className='w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain' />
               </div>
               <div className="text-left min-w-0 flex-1">
                 <h3 className="text-lg sm:text-xl md:text-3xl font-extrabold text-primary truncate">{category.category}</h3>
