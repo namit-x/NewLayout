@@ -129,8 +129,6 @@ const Services = () => {
 
   return (
     <div className="min-h-screen scroll-smooth">
-      <Header />
-
       {/* Hero Section */}
       <div className="h-[70vh] sm:h-[80vh] w-full relative overflow-hidden">
         <div
@@ -327,8 +325,6 @@ const Services = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
