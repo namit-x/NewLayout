@@ -34,14 +34,24 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <img
                 src="/Logo2.png"
-                width={50}
-                height={50}
+                width={100}
+                height={100}
                 alt="Advance Architect Logo"
-                className="filter brightness-0 invert opacity-90 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18"
+                className="filter brightness-0 invert opacity-90 w-16 h-16 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20"
               />
               <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-playfair font-bold text-white">
                 ADVANCE <span className="text-amber-500">ARCHITECT</span>
+                {/* Bottom Borders and WORKINGGROUP Text */}
+                <div className={`flex flex-col items-center text-white`}>
+                  <div className={`h-[.25px] w-full bg-white`}></div>
+                  <div className={`h-[.25px] w-[90%] mt-[3px] bg-white`}></div>
+                  <div className="text-[12px] tracking-widest uppercase mt-1 opacity-70 text-center -mt-2">
+                  <span className="whitespace-pre">W  O  R  K  I  N   G        G  R  O  U  P</span>
+                  </div>
+                </div>
               </h3>
+
+
             </div>
             <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl">
               Creating extraordinary architectural experiences through innovative design,

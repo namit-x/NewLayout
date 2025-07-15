@@ -126,7 +126,7 @@ const ContactInfo = () => {
                     <div className="min-w-0 flex-1">
                       <h3 className="font-playfair text-lg sm:text-xl font-semibold text-foreground mb-2">Visit Our Studio</h3>
                       <p className="text-base sm:text-lg font-medium text-foreground">
-                        14, First Floor, Saini Complex, Near civil hospital, Rohtak
+                        14, First Floor, Saini Complex, Near civil hospital, Rohtak - 124001
                       </p>
                       <p className="text-sm sm:text-base text-muted-foreground mt-2 flex items-center gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clock">
