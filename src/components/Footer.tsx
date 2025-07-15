@@ -6,19 +6,19 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <Instagram className="w-5 h-5" />,
-      href: "#",
+      href: "https://www.instagram.com/advancearchitect?igsh=eHhpbHJ1NTYyczQ3&utm_source=qr",
       label: "Instagram",
       color: "border-pink-500 hover:bg-pink-500"
     },
     {
       icon: <Facebook className="w-5 h-5" />,
-      href: "#",
+      href: "https://www.facebook.com/share/16rBLsQmXw/?mibextid=wwXIfr",
       label: "Facebook",
       color: "border-blue-500 hover:bg-blue-500"
     },
     {
       icon: <Phone className="w-5 h-5" />,
-      href: "#",
+      href: "tel:+918529990100",
       label: "Phone",
       color: "border-green-500 hover:bg-green-500"
     }
@@ -45,7 +45,7 @@ const Footer = () => {
                 <div className={`flex flex-col items-center text-white`}>
                   <div className={`h-[.25px] w-full bg-white`}></div>
                   <div className={`h-[.25px] w-[90%] mt-[3px] bg-white`}></div>
-                  <div className="text-[12px] tracking-widest uppercase mt-1 opacity-70 text-center -mt-2">
+                  <div className="text-[12px] tracking-widest uppercase opacity-70 text-center -mt-1">
                   <span className="whitespace-pre">W  O  R  K  I  N   G        G  R  O  U  P</span>
                   </div>
                 </div>
@@ -102,6 +102,7 @@ const Footer = () => {
                   <a
                     key={index}
                     href={link.href}
+                    target='_blank'
                     aria-label={link.label}
                     className={clsx(
                       'w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gray-800 rounded-full flex items-center justify-center',
