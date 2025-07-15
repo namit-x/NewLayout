@@ -6,7 +6,7 @@ import bgImage from '/SHero.png'
 const servicesData = {
   "services": [
     {
-      "category": "Architecture",
+      "category": "ARCHITECTURE",
       "tagline": "Your Vision, Our Expertise",
       "icon": <Building className="w-16 h-16" />,
       "services_offered": [
