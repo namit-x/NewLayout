@@ -113,7 +113,7 @@ const Services = () => {
       <Header />
 
       {/* Hero Section */}
-      <div className="h-screen w-full relative overflow-hidden">
+      <div className="h-[80vh] w-full relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -129,10 +129,10 @@ const Services = () => {
             variants={staggerChildren}
           >
             <motion.h1
-              className="text-4xl md:text-6xl font-light text-white tracking-wider mb-4"
+              className="text-4xl md:text-6xl font-playfair text-white tracking-wider mb-4"
               variants={fadeIn}
             >
-              Our Services
+              <span className='text-gradient'>Our</span> Services
             </motion.h1>
             <motion.p
               className="text-gray-200 text-lg max-w-2xl mx-auto px-4"

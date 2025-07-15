@@ -5,59 +5,60 @@ import portfolioHeroBg from '/PHero.png'
 const projects = [
   {
     id: 1,
-    title: "Meridian Residence",
+    title: "Vrindavan Residency",
     category: "Residential",
-    description: "A stunning modern home that seamlessly blends contemporary design with natural elements. Featuring expansive glass facades and sustainable materials, this residence creates a harmonious connection between indoor and outdoor living spaces.",
+    description: "A serene modern home located on the outskirts of Jaipur. Combining traditional Rajasthani elements with contemporary architecture, it offers open courtyards and sustainable living with a cultural soul.",
     image: 'p1.png',
     year: "2023",
-    location: "California, USA"
+    location: "Jaipur, Rajasthan, India"
   },
   {
     id: 2,
-    title: "Nova Corporate Center",
+    title: "InfyTech Towers",
     category: "Commercial",
-    description: "An innovative office complex designed to foster collaboration and creativity. The building's glass and steel structure maximizes natural light while providing flexible workspaces that adapt to the evolving needs of modern businesses.",
+    description: "A high-tech corporate space in Bengaluru's Electronic City, designed for collaboration and innovation. Features smart climate control and flexible interiors to suit tech startups and large enterprises alike.",
     image: "/p2.png",
     year: "2023",
-    location: "New York, USA"
+    location: "Bengaluru, Karnataka, India"
   },
   {
     id: 3,
-    title: "Urban Gardens Complex",
+    title: "GreenHive Habitat",
     category: "Mixed-Use",
-    description: "A revolutionary approach to urban living that integrates vertical gardens and sustainable design principles. This multi-family complex demonstrates how architecture can promote environmental consciousness while creating vibrant communities.",
+    description: "An eco-conscious development in Pune, integrating residential units, retail outlets, and rooftop gardens. Designed to reduce carbon footprint while enhancing community interaction and livability.",
     image: "/p3.png",
     year: "2022",
-    location: "Portland, USA"
+    location: "Pune, Maharashtra, India"
   },
   {
     id: 4,
-    title: "Azure Villa",
+    title: "Shanti Villa",
     category: "Luxury Residential",
-    description: "An architectural masterpiece that epitomizes luxury living with its infinity pool, open-plan design, and premium materials. The villa's seamless indoor-outdoor flow creates an unparalleled living experience in a stunning natural setting.",
+    description: "A lavish villa near Alibaug featuring infinity pool views of the Arabian Sea, artisanal finishes, and an open floor plan that blends seamlessly with the coastal landscape.",
     image: "/p4.png",
     year: "2023",
-    location: "Miami, USA"
+    location: "Alibaug, Maharashtra, India"
   },
   {
     id: 5,
-    title: "Cultural Arts Center",
+    title: "Kala Kendra",
     category: "Public/Cultural",
-    description: "A dynamic cultural hub featuring innovative curved architecture and flexible performance spaces. The building's design reflects the creative spirit of the community while providing state-of-the-art facilities for arts and cultural programs.",
+    description: "A vibrant cultural center in Udaipur celebrating Indian art, music, and heritage. The design reflects Mughal and Rajputana architecture while offering modern performance spaces and galleries.",
     image: "/p5.png",
     year: "2022",
-    location: "Austin, USA"
+    location: "Udaipur, Rajasthan, India"
   },
   {
     id: 6,
-    title: "EcoLiving Residential",
+    title: "Aaranya EcoHomes",
     category: "Sustainable Housing",
-    description: "A pioneering example of sustainable architecture featuring green roofs, solar integration, and eco-friendly materials. This project demonstrates our commitment to environmental responsibility without compromising on design excellence.",
+    description: "An award-winning green housing project near Coimbatore, designed with solar energy systems, rainwater harvesting, and natural ventilation for a zero-energy lifestyle.",
     image: "/p6.png",
     year: "2023",
-    location: "Seattle, USA"
+    location: "Coimbatore, Tamil Nadu, India"
   }
 ];
+
 
 const Portfolio = () => {
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
