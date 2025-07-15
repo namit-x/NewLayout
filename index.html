@@ -2,10 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="icon" type="image/png" href="Logo2.png">
+    <link id="favicon" rel="icon" type="image/png" href="Logo2.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Advance Architect</title>
+
+    <script>
+      const setFavicon = () => {
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const favicon = document.getElementById('favicon');
+        favicon.href = isDark ? 'Logo2.png' : 'Logo.png';
+      };
+
+      // Set on load
+      setFavicon();
+
+      // Update on theme change
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setFavicon);
+    </script>
   </head>
   <body>
     <div id="root"></div>
