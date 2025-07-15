@@ -1,11 +1,27 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
+import clsx from 'clsx';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <Instagram className="w-5 h-5" />, href: "#", label: "Instagram" },
-    { icon: <Facebook className="w-5 h-5" />, href: "#", label: "Facebook" },
-    { icon: <Phone className="w-5 h-5" />, href: "#", label: "Phone" }
+    {
+      icon: <Instagram className="w-5 h-5" />,
+      href: "#",
+      label: "Instagram",
+      color: "border-pink-500 hover:bg-pink-500"
+    },
+    {
+      icon: <Facebook className="w-5 h-5" />,
+      href: "#",
+      label: "Facebook",
+      color: "border-blue-500 hover:bg-blue-500"
+    },
+    {
+      icon: <Phone className="w-5 h-5" />,
+      href: "#",
+      label: "Phone",
+      color: "border-green-500 hover:bg-green-500"
+    }
   ];
 
   return (
@@ -16,12 +32,12 @@ const Footer = () => {
           {/* Company Info - Takes full width on mobile, 2/3 on tablet, 7/12 on desktop */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-              <img 
-                src="/Logo2.png" 
-                width={50} 
+              <img
+                src="/Logo2.png"
+                width={50}
                 height={50}
-                alt="Advance Architect Logo" 
-                className="filter brightness-0 invert opacity-90 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18" 
+                alt="Advance Architect Logo"
+                className="filter brightness-0 invert opacity-90 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18"
               />
               <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-playfair font-bold text-white">
                 ADVANCE <span className="text-amber-500">ARCHITECT</span>
@@ -49,8 +65,8 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500 flex-shrink-0" />
-                  <a 
-                    href="tel:+918997320043" 
+                  <a
+                    href="tel:+918997320043"
                     className="text-gray-300 hover:text-amber-500 transition-colors text-sm sm:text-base"
                   >
                     +91 89973 20043
@@ -58,8 +74,8 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500 flex-shrink-0" />
-                  <a 
-                    href="mailto:architectadvance@gmail.com" 
+                  <a
+                    href="mailto:architectadvance@gmail.com"
                     className="text-gray-300 hover:text-amber-500 transition-colors text-sm sm:text-base break-all"
                   >
                     architectadvance@gmail.com
@@ -77,9 +93,11 @@ const Footer = () => {
                     key={index}
                     href={link.href}
                     aria-label={link.label}
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gray-800 rounded-full flex items-center justify-center 
-                      hover:bg-amber-600 transition-all duration-300 group border border-gray-700 hover:border-amber-500
-                      hover:scale-110 active:scale-95"
+                    className={clsx(
+                      'w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gray-800 rounded-full flex items-center justify-center',
+                      'transition-all duration-300 group hover:scale-110 active:scale-95',
+                      link.color
+                    )}
                   >
                     {React.cloneElement(link.icon, {
                       className: "w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 group-hover:text-white transition-transform text-gray-300"
@@ -90,37 +108,6 @@ const Footer = () => {
               <p className="text-gray-400 text-xs sm:text-sm md:text-base italic leading-relaxed">
                 Follow us for the latest updates and projects
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0 gap-4">
-            <div className="text-gray-400 text-xs sm:text-sm md:text-base text-center sm:text-left">
-              © {new Date().getFullYear()} Advance Architect. All rights reserved.
-            </div>
-            <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6">
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-amber-500 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap"
-              >
-                Privacy Policy
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-amber-500 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap"
-              >
-                Terms of Service
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-amber-500 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap"
-              >
-                Accessibility
-              </a>
             </div>
           </div>
         </div>
