@@ -1,6 +1,4 @@
 import React, { useRef, useEffect, useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import { Building, Hammer, Cog } from 'lucide-react';
 import { motion } from 'framer-motion';
 import bgImage from '/SHero.png'
