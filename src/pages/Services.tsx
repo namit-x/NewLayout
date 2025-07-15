@@ -184,7 +184,7 @@ const Services = () => {
                 {React.cloneElement(category.icon, { className: "w-4 h-4 sm:w-5 h-5 md:w-6 h-6" })}
               </div>
               <div className="text-left min-w-0 flex-1">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary truncate">{category.category}</h3>
+                <h3 className="text-lg sm:text-xl md:text-3xl font-extrabold text-primary truncate">{category.category}</h3>
                 <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">{category.tagline}</p>
               </div>
             </button>
@@ -203,7 +203,7 @@ const Services = () => {
             <div className="inline-block p-3 sm:p-4 rounded-full mb-4 bg-accent/10 text-accent">
               <Building className="w-6 sm:w-8 h-8" />
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-2 sm:mb-3">ARCHITECTURE</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">Architecture</h2>
             <p className="text-lg sm:text-xl text-primary">Your Vision, Our Expertise</p>
           </div>
 
