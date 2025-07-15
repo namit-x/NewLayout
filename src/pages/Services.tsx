@@ -206,7 +206,7 @@ const Services = () => {
             <div className="inline-block p-3 sm:p-4 rounded-full mb-4 bg-accent/10 text-accent">
               <Building className="w-6 sm:w-8 h-8" />
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">Architecture</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">ARCHITECTURE</h2>
             <p className="text-lg sm:text-xl text-primary">Your Vision, Our Expertise</p>
           </div>
 
@@ -250,7 +250,7 @@ const Services = () => {
             <div className="inline-block p-3 sm:p-4 rounded-full mb-4 bg-white/10">
               <Cog className="w-6 sm:w-8 h-8" />
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">Engineering</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">ENGINEERING</h2>
             <p className="text-lg sm:text-xl">Structural Strength meets Thoughtful Design</p>
           </div>
 
@@ -294,7 +294,7 @@ const Services = () => {
             <div className="inline-block p-3 sm:p-4 rounded-full mb-4 bg-accent/10 text-accent">
               <Hammer className="w-6 sm:w-8 h-8" />
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">Construction</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">CONSTRUCTION</h2>
             <p className="text-lg sm:text-xl text-primary">Building Your Dream, Brick by Brick</p>
           </div>
 
