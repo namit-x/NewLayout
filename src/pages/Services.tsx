@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Building, Hammer, Cog } from 'lucide-react';
 import { motion } from 'framer-motion';
-import bgImage from '/SHero.png'
+import bgImage from '/SHero.png';
 
 const servicesData = {
   "services": [
@@ -54,7 +54,7 @@ const servicesData = {
     {
       "category": "CONSTRUCTION",
       "tagline": "Building Your Dream, Brick by Brick",
-      "src":'Engin.jpg',
+      "src": 'Engin.jpg',
       "icon": <Hammer className="w-16 h-16" />,
       "services_offered": [
         {
@@ -97,7 +97,7 @@ const Services = () => {
     if (ref.current && navigationBoxRef.current) {
       const headerHeight = 80; // Approximate header height
       const navigationHeight = navigationBoxRef.current.offsetHeight;
-      const totalOffset = headerHeight + navigationHeight -90;
+      const totalOffset = headerHeight + navigationHeight - 90;
       const sectionPosition = ref.current.offsetTop;
       const offsetPosition = sectionPosition - totalOffset;
   
@@ -105,6 +105,22 @@ const Services = () => {
         top: offsetPosition,
         behavior: 'smooth'
       });
+    }
+  };
+
+  const handleButtonClick = (category: string) => {
+    switch (category) {
+      case "ARCHITECTURE":
+        scrollToSection(architectureRef);
+        break;
+      case "ENGINEERING":
+        scrollToSection(engineeringRef);
+        break;
+      case "CONSTRUCTION":
+        scrollToSection(constructionRef);
+        break;
+      default:
+        break;
     }
   };
 
@@ -125,7 +141,6 @@ const Services = () => {
     }
   };
 
-  // Calculate section height to ensure proper viewport fitting
   const sectionHeight = viewportHeight > 0 ? Math.max(viewportHeight - navigationHeight - 80, 600) : 'auto';
 
   return (
@@ -176,15 +191,16 @@ const Services = () => {
           {servicesData.services.map((category) => (
             <button
               key={category.category}
-              onClick={() => {
-                if (category.category === "Architecture") scrollToSection(architectureRef);
-                if (category.category === "Engineering") scrollToSection(engineeringRef);
-                if (category.category === "Construction") scrollToSection(constructionRef);
-              }}
-              className="flex-1 flex items-center gap-2 sm:gap-4 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl transition-all duration-300 hover:bg-accent/10 hover:shadow-sm group"
+              onClick={() => handleButtonClick(category.category)}
+              className="flex-1 flex items-center gap-2 sm:gap-4 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl transition-all duration-300 hover:bg-accent/10 hover:shadow-sm group relative z-10"
             >
-              <div className="rounded-lg text-accent transition-colors">
-                <img src={`${category.src}`} alt="image" className='w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain' />
+              <div className="rounded-lg text-accent transition-colors pointer-events-none">
+                <img
+                  src={category.src}
+                  alt={category.category}
+                  className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
+                  draggable="false"
+                />
               </div>
               <div className="text-left min-w-0 flex-1">
                 <h3 className="text-lg sm:text-xl md:text-3xl font-extrabold text-primary truncate">{category.category}</h3>
